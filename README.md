@@ -10,8 +10,28 @@ $ go get github.com/nii236/gopher-resume
 
 ## Usage
 
+
+CLI tool to generate CVs from the command line.
+
 ```
-$ go run main.go process
+$ go run main.go process -name ExampleGuy
+```
+
+Web server with a REST API that generates CVs.
+
+```
+$ go run main.go serve
+$ curl localhost:8080/?name=john%20guy
+
+Name: john guy
+Label:
+Picture:
+Email:
+Phone:
+Website:
+Summary:
+Location: {    }
+Profiles: []
 ```
 
 ## Contributing
