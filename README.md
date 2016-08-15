@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/nii236/gopher-resume.png?label=ready&title=Ready)](https://waffle.io/nii236/gopher-resume)
 # Project Name
 
 This is an early stage project attempting to port JSON resume over to Go
