@@ -1,7 +1,13 @@
 [![Stories in Ready](https://badge.waffle.io/nii236/gopher-resume.png?label=ready&title=Ready)](https://waffle.io/nii236/gopher-resume)
-# Project Name
+# Gopher Resume
 
-This is an early stage project attempting to port JSON resume over to Go
+This is an early stage project attempting to port JSON resume over to Go.
+
+The scope has since change and now the server will host a copy of a user's resume. Recruiters will be given a expirable token with which they can login and view the candidate's private details.
+
+There will be a CLI proxy from the client side, containing admin, member and guest levels of information.
+
+At some point there will be the ability for other people to upload their own CVs and generate their own tokens for their own recruiters.
 
 ## Installation
 
