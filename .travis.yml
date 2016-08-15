@@ -1,10 +1,19 @@
 language: go
 sudo: false
-install:
-  - go get github.com/Masterminds/glide
-  - glide install
+before_install:
+- go get github.com/axw/gocov/gocov
+- go get github.com/Masterminds/glide
+- glide install
 go:
-  - 1.6
+- 1.6
 env:
+  matrix:
   - PORT=8080 IP=0.0.0.0
-script: go test -v $(glide novendor)
+script:
+- gocov test $(glide nv) | gocov report
+notifications:
+  slack:
+    on_start: never
+    email: false
+    rooms:
+      secure: phzubuCGg4roa7QOcsKcO8aBPF3YU9tcyPuoKBVbqI2etpU5k4lRjevIl9ILDjk7KgUUevBnlX0RXMNUtB6RL2S4HbfZqqQx2n4g99IjT8NeV0F+IQ3qqpKkQR7karn1uth6yG5uzj2l0+iS8pE5asj8xVOKt0jOYg0yVYeMRs6z+gE8Vp8OxqD2YN3i9dKLCOQ+m85y0+6u9LeA086L1yoDCijShYIxxHneqJATv8mq54raqL0Kd+3B7WtbHuWKxRzFrqRQQqy/9rYEhd3y9CNO/YGD3q1UrsZIpeft6iKny+ZCkNUSmNS5ui1BYMVm3p2SbNC04cApw/xY24H87G7c8CCD3qWs187KkjaCsr8ioVbAJL538slt2c+bZNrTw03wzhym9/VZdiC3WJtSfpX/JKLSGPFMO6Red9k3xAlHruSwcC3JTmatiXkYC+etRDZ6TQegE3Mx4LhIiSTDoaKr3Y6spGwR4mRpMze+Vpn4yVevpITIkr6PdLQm1tYgU9/A0AbOKpGvimRMXq6AukA+V01dDmdxtusDsgp3uODqKSB/bU3/mbusXXQ8w/KJd/8B2xbadUIrr/ls/6CDJDpg4qpaR3sAAzstVwbpsZyz9Hfn0ZqAgaIxpQdXlKlsjr3ciC0L11eI/U75WF+PoNQIP2wEwLXZhY3HIfxWHXw=
