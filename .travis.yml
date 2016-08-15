@@ -1,0 +1,11 @@
+language: go
+sudo: false
+install:
+  - go get github.com/Masterminds/glide
+  - glide install
+go:
+  - 1.6
+env:
+  - PORT=8080
+  - IP=0.0.0.0
+script: go test -v -tags integration ./...

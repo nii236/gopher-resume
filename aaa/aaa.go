@@ -18,17 +18,18 @@ func Generate(numAdj int, sep string) string {
 }
 
 func randomAdjective() string {
-	n, err := rand.Int(rand.Reader, big.NewInt(int64(len(adjectives))))
+	n, err := rand.Int(rand.Reader, big.NewInt(int64(len(adjectives)-1)))
 	if err != nil {
 		return ""
 	}
-	return strings.ToLower(adjectives[int(n.Int64())-1])
+	return strings.ToLower(adjectives[int(n.Int64())])
 }
 
 func randomAnimal() string {
-	n, err := rand.Int(rand.Reader, big.NewInt(int64(len(animals))))
+	n, err := rand.Int(rand.Reader, big.NewInt(int64(len(animals)-1)))
 	if err != nil {
 		return ""
+
 	}
-	return strings.ToLower(animals[int(n.Int64())-1])
+	return strings.ToLower(animals[int(n.Int64())])
 }
