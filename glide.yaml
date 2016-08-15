@@ -1,0 +1,4 @@
+package: github.com/nii236/gopher-resume
+import:
+- package: github.com/spf13/cobra
+- package: github.com/spf13/viper
