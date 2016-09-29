@@ -3,7 +3,8 @@ package models
 // Me is you
 var Me = Resume{
 	BasicInformation: Basic{
-		Name: "John Nguyen",
+		Name:  "John Nguyen",
+		Email: "jtnguyen236@gmail.com",
 	},
 	WorkExperience:      []Work{},
 	VolunteerExperience: []Volunteer{},
